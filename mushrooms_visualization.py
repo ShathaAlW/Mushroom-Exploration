@@ -32,7 +32,7 @@ for column in columns:
      plt.clf()
   else:
     wedge_size = df[column].value_counts(normalize= True)
-    wedge_label = df[column].unique()
+    wedge_label = df[column].value_counts().index.tolist()
     wedge_color = ['#b8a9c9', '#eeac99', '#5b9aa0', '#622569', '#f9d5e5', '#e06377']
     plt.pie(wedge_size, colors= wedge_color, autopct= my_autopct)
     plt.title(column + " Value Counts", fontsize= 12)
